@@ -1,8 +1,8 @@
 def cadastrar_cliente():
 
     # Solicita informações ao usuário para cadastrar o mesmo
-    print("\nOlá, meu nome é JOANAs, sou sua assistente. Antes de tudo, vamos te conhecer um pouquinho melhor!")
-    print("\nVamos realizar o seu cadastro.")
+    print("Olá, meu nome é JOANAs, sou sua assistente. Antes de tudo, vamos te conhecer um pouquinho melhor!")
+    print("Vamos realizar o seu cadastro.")
     nome = input("Digite o seu nome: ")
     email = input("Digite o seu email: ")
     telefone = input("Digite o seu número de telefone: ")
