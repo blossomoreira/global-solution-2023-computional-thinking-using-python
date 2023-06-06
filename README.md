@@ -15,25 +15,25 @@ Um exemplo prático envolveria o agricultor capturar uma imagem do solo através
 
 # INSTRUÇÕES DE USO
 
-## CADASTRAMENTO
+## CADASTRAMENTO:
+
+# TODO O PROCESSO DE CADASTRAMENTO É FEITO COM NÚMEROS
 
 O programa solicitará informações para cadastrar o cliente:
 - Digite o nome do cliente quando solicitado.
 - Digite o email do cliente quando solicitado.
 - Digite o número de telefone do cliente quando solicitado.
 
-Após o cadastro do cliente, o programa perguntará se você deseja cadastrar um plantio.<br>
-Digite "Sim" para cadastrar um plantio ou "Não" para encerrar o programa.<br>
+Após o cadastro do cliente, o programa perguntará se O USUÁRIO deseja cadastrar um plantio.<br>
+- Digite "1 - Sim" para cadastrar um plantio ou "2 - Não" para encerrar o programa.<br>
 Se escolher "Sim", o programa solicitará informações sobre o plantio.<br>
-Selecione o tipo de planta digitando o número correspondente à opção fornecida.<br>
-Selecione o tipo de solo digitando o número correspondente à opção fornecida.<br>
-Possíveis pragas e sementes recomendadas:<br>
+- Selecione o tipo de planta digitando o número correspondente à opção fornecida.<br>
+- Selecione o tipo de solo digitando o número correspondente à opção fornecida. Assim, fornecendo as pragas<br>
 
 O programa identificará as possíveis pragas com base no tipo de planta selecionado.<br>
 Em seguida, exibirá as sementes recomendadas com base no tipo de solo escolhido.<br>
-Caso não haja sementes recomendadas para o tipo de solo selecionado, será exibida uma mensagem informando isso.<br>
+Caso não haja sementes recomendadas para o tipo de solo selecionado, será exibida uma mensagem informando a situação.<br>
 
-Resultados:
+# Resultados finais:
 Após o cadastro do plantio, o programa exibirá os detalhes do cliente e os plantios cadastrados.<br>
-Será exibido o nome do cliente.<br>
-Em seguida, serão listados os detalhes de cada plantio, incluindo o tipo de planta, o tipo de solo e as possíveis pragas.
+Será exibido o nome do cliente e a lista com detalhes de cada plantio, incluindo o tipo de planta, o tipo de solo e as possíveis pragas.
