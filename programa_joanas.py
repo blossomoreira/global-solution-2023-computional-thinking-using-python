@@ -1,8 +1,9 @@
 def cadastrar_cliente():
-    print("\nCadastro do Cliente")
-    nome = input("Digite o nome do cliente: ")
-    email = input("Digite o email do cliente: ")
-    telefone = input("Digite o telefone do cliente: ")
+    print("\nOlá, meu nome é JOANAs, sou sua assistente. Antes de tudo, vamos te conhecer um pouquinho melhor!")
+    print("\nVamos realizar o seu cadastro.")
+    nome = input("Digite o seu nome: ")
+    email = input("Digite o seu email: ")
+    telefone = input("Digite o seu número de telefone: ")
 
     cliente = {
         "nome": nome,
@@ -13,21 +14,20 @@ def cadastrar_cliente():
 
     return cliente
 
+
 def cadastrar_plantio():
-    print("\nCadastro do Plantio")
+    print("\nMe fale um pouco sobre o que você quer plantar: ")
     tipo_planta = selecionar_opcao("Selecione o tipo de planta do plantio:", ["Trigo", "Milho", "Arroz", "Feijão"])
-    tamanho_hectare = float(input("Digite o tamanho do plantio em hectares: "))
     tipo_solo = selecionar_opcao("Selecione o tipo de solo do plantio:", ["Argiloso", "Arenoso", "Mistura de Argila e Areia"])
-    modelo_cultivo = selecionar_opcao("Selecione o modelo de cultivo utilizado:", ["Convencional", "Orgânico", "Hidropônico"])
 
     plantio = {
         "tipo_planta": tipo_planta,
-        "tamanho_hectare": tamanho_hectare,
         "tipo_solo": tipo_solo,
-        "modelo_cultivo": modelo_cultivo
+        "possiveis_pragas": identificar_pragas(tipo_planta)
     }
 
     return plantio
+
 
 def identificar_pragas(tipo_planta):
     pragas = {
@@ -42,10 +42,11 @@ def identificar_pragas(tipo_planta):
     else:
         return []
 
+
 def selecionar_opcao(mensagem, opcoes):
     print(mensagem)
-    for index, opcao in enumerate(opcoes, 1):
-        print(f"{index}. {opcao}")
+    for i in range(len(opcoes)):
+        print(f"{i+1}. {opcoes[i]}")
 
     while True:
         escolha = input("Escolha uma opção: ")
@@ -59,89 +60,50 @@ def selecionar_opcao(mensagem, opcoes):
         except ValueError:
             print("Opção inválida. Digite o número correspondente à opção.")
 
+
 def main():
     cliente = cadastrar_cliente()
 
     while True:
-        opcao = selecionar_opcao("\nDeseja cadastrar um novo plantio? (Digite o número da opção)", ["Sim", "Não"])
+        opcao = selecionar_opcao("\nVamos cadastrar um plantio? Digite", ["Sim", "Não"])
 
-        match opcao:
-            case "Sim":
-                plantio = cadastrar_plantio()
-                plantio["possiveis_pragas"] = identificar_pragas(plantio["tipo_planta"])
-                cliente["plantios"].append(plantio)
-                print("\nPlantio cadastrado com sucesso!")
-            case "Não":
-                break
+        if opcao == "Sim":
+            plantio = cadastrar_plantio()
+            cliente["plantios"].append(plantio)
+            print("\nPlantio cadastrado com sucesso!")
+        elif opcao == "Não":
+            break
 
     for plantio in cliente["plantios"]:
-        match plantio["modelo_cultivo"]:
-            case "Convencional":
-                print(f"\nPara o plantio de {plantio['tipo_planta']} no solo {plantio['tipo_solo']}, é recomendado cultivar os seguintes vegetais:")
-                match plantio["tipo_solo"]:
-                    case "Argiloso":
-                        print("- Alface")
-                        print("- Cenoura")
-                    case "Arenoso":
-                        print("- Tomate")
-                        print("- Pimentão")
-                    case "Mistura de Argila e Areia":
-                        print("- Tomate")
-                        print("- Pimentão")
-                    case _:
-                        print("Tipo de solo inválido.")
+        tipo_solo = plantio["tipo_solo"]
 
-                print("\nPossíveis pragas:")
-                for praga in plantio["possiveis_pragas"]:
-                    print(f"- {praga}")
+        print(f"\nPara o plantio de {plantio['tipo_planta']} no solo {tipo_solo}, é recomendado cultivar as seguintes sementes:")
 
-            case "Orgânico":
-                print(f"\nPara o plantio de {plantio['tipo_planta']} no solo {plantio['tipo_solo']}, é recomendado cultivar os seguintes vegetais:")
-                match plantio["tipo_solo"]:
-                    case "Argiloso":
-                        print("- Alface")
-                        print("- Brócolis")
-                    case "Arenoso":
-                        print("- Pimentão")
-                        print("- Abobrinha")
-                    case "Mistura de Argila e Areia":
-                        print("- Tomate")
-                        print("- Pimentão")
-                    case _:
-                        print("Tipo de solo inválido.")
+        if tipo_solo == "Argiloso":
+            sementes_recomendadas = ["Semente 1", "Semente 2"]
+        elif tipo_solo == "Arenoso":
+            sementes_recomendadas = ["Semente 3", "Semente 4"]
+        elif tipo_solo == "Mistura de Argila e Areia":
+            sementes_recomendadas = ["Semente 5", "Semente 6"]
+        else:
+            sementes_recomendadas = []
 
-                print("\nPossíveis pragas:")
-                for praga in plantio["possiveis_pragas"]:
-                    print(f"- {praga}")
+        if sementes_recomendadas:
+            for semente in sementes_recomendadas:
+                print(f"- {semente}")
+        else:
+            print("Não há sementes recomendadas para esse tipo de solo.")
 
-            case "Hidropônico":
-                print(f"\nPara o plantio de {plantio['tipo_planta']} no solo {plantio['tipo_solo']}, é recomendado cultivar os seguintes vegetais:")
-                match plantio["tipo_solo"]:
-                    case "Argiloso":
-                        print("- Alface")
-                        print("- Rúcula")
-                    case "Arenoso":
-                        print("- Alface")
-                        print("- Espinafre")
-                    case "Mistura de Argila e Areia":
-                        print("- Alface")
-                        print("- Couve")
-                    case _:
-                        print("Tipo de solo inválido.")
-
-                print("\nPossíveis pragas:")
-                for praga in plantio["possiveis_pragas"]:
-                    print(f"- {praga}")
+        print("\nPossíveis pragas:")
+        for praga in plantio["possiveis_pragas"]:
+            print(f"- {praga}")
 
     print("\nCliente:")
     print(f"Nome: {cliente['nome']}")
     print("Plantios:")
     for plantio in cliente["plantios"]:
         print(f" - Tipo de planta: {plantio['tipo_planta']}")
-        print(f" - Tamanho do hectare: {plantio['tamanho_hectare']} hectares")
         print(f" - Tipo de solo: {plantio['tipo_solo']}")
-        print(f" - Modelo de cultivo: {plantio['modelo_cultivo']}")
-        print()
 
 if __name__ == "__main__":
     main()
