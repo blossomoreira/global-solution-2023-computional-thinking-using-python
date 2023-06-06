@@ -1,11 +1,12 @@
 def cadastrar_cliente():
-
+    # Solicita informações ao usuário para cadastrar o mesmo
     print("\nOlá, meu nome é JOANAs, sou sua assistente. Antes de tudo, vamos te conhecer um pouquinho melhor!")
     print("\nVamos realizar o seu cadastro.")
     nome = input("Digite o seu nome: ")
     email = input("Digite o seu email: ")
     telefone = input("Digite o seu número de telefone: ")
 
+    # Cria um dicionario com as informações do cliente
     cliente = {
         "nome": nome,
         "email": email,
@@ -15,11 +16,14 @@ def cadastrar_cliente():
 
     return cliente
 
+
 def cadastrar_plantio():
+    # Solicita informações ao usuário para cadastrar um plantio
     print("\nMe fale um pouco sobre o que você quer plantar: ")
     tipo_planta = selecionar_opcao("Selecione o tipo de planta do plantio:", ["Trigo", "Milho", "Arroz", "Feijão"])
     tipo_solo = selecionar_opcao("Selecione o tipo de solo do plantio:", ["Argiloso", "Arenoso", "Mistura de Argila e Areia"])
 
+    # Cria um dicionário com as informações do plantio
     plantio = {
         "tipo_planta": tipo_planta,
         "tipo_solo": tipo_solo,
@@ -30,6 +34,7 @@ def cadastrar_plantio():
 
 
 def identificar_pragas(tipo_planta):
+    # Dicionário com as pragas possíveis para cada tipo de planta
     pragas = {
         "Trigo": ["Lagarta do cartucho", "Ferrugem do trigo", "Pulgões"],
         "Milho": ["Lagarta do cartucho", "Lagarta elasmo", "Broca do colmo"],
@@ -37,17 +42,21 @@ def identificar_pragas(tipo_planta):
         "Feijão": ["Mosca branca", "Lagarta da vagem", "Antracnose"]
     }
 
+    # Verifica se o tipo de planta existe no dicionário de pragas
     if tipo_planta in pragas:
         return pragas[tipo_planta]
     else:
         return []
 
+
 def selecionar_opcao(mensagem, opcoes):
+    # Exibe a mensagem e as opções disponíveis para selecionar
     print(mensagem)
     for i in range(len(opcoes)):
         print(f"{i+1}. {opcoes[i]}")
 
     while True:
+        # Pede para o usuário escolher uma opção
         escolha = input("Escolha uma opção: ")
         try:
             escolha = int(escolha)
@@ -59,13 +68,17 @@ def selecionar_opcao(mensagem, opcoes):
         except ValueError:
             print("Opção inválida. Digite o número correspondente à opção.")
 
+
 def main():
+    # Cadastra um cliente
     cliente = cadastrar_cliente()
 
     while True:
+        # Pergunta ao cliente se deseja cadastrar um plantio
         opcao = selecionar_opcao("\nVamos cadastrar um plantio? Digite: ", ["Sim", "Não"])
 
         if opcao == "Sim":
+            # Cadastra um plantio
             plantio = cadastrar_plantio()
             cliente["plantios"].append(plantio)
             print("\nPlantio cadastrado com sucesso!")
@@ -77,6 +90,7 @@ def main():
 
         print(f"\nPara o plantio de {plantio['tipo_planta']} no solo {tipo_solo}, é recomendado cultivar as sementes:")
 
+        # Verifica o tipo de solo e define as sementes recomendadas
         if tipo_solo == "Argiloso":
             sementes_recomendadas = ["Semente 1", "Semente 2"]
         elif tipo_solo == "Arenoso":
@@ -87,6 +101,7 @@ def main():
             sementes_recomendadas = []
 
         if sementes_recomendadas:
+            # Exibe as sementes recomendadas para o tipo de solo
             for semente in sementes_recomendadas:
                 print(f"- {semente}")
         else:
@@ -102,6 +117,7 @@ def main():
     for plantio in cliente["plantios"]:
         print(f" - Tipo de planta: {plantio['tipo_planta']}")
         print(f" - Tipo de solo: {plantio['tipo_solo']}")
+
 
 if __name__ == "__main__":
     main()
