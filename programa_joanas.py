@@ -73,7 +73,7 @@ def main():
 
     while True:
         # Pergunta ao cliente se deseja cadastrar um plantio
-        opcao = selecionar_opcao("\nVamos cadastrar um plantio? Digite: ", ["1 - Sim", "2 - Não"])
+        opcao = selecionar_opcao("\nVamos cadastrar um plantio? Digite: ", ["Sim", "Não"])
 
         if opcao == "Sim":
             # Cadastra um plantio
@@ -90,11 +90,11 @@ def main():
 
         # Verifica o tipo de solo e define as sementes recomendadas
         if tipo_solo == "Argiloso":
-            sementes_recomendadas = ["Feijão", "Milho"]
+            sementes_recomendadas = ["Trigo", "Milho"]
         elif tipo_solo == "Arenoso":
-            sementes_recomendadas = ["Semente 3", "Semente 4"]
+            sementes_recomendadas = ["Feijão", "Arroz"]
         elif tipo_solo == "Mistura de Argila e Areia":
-            sementes_recomendadas = ["Semente 5", "Semente 6"]
+            sementes_recomendadas = ["Milho", "Feijão"]
         else:
             sementes_recomendadas = []
 
