@@ -1,11 +1,11 @@
 # GLOBAL SOLUTION 2023 - JOANAs
 
-# EQUIPE:
+## EQUIPE:
 99478 - Diogo Mendes Moreira
 97694 - Giulia Pina de Figueiredo Galvão Ribeiro
 552458 - LAÍS MENDES SANTOS
 
-# COMO ELA FUNCIONA?
+## COMO ELA FUNCIONA?
 
 JOANAS é um sistema integrado com o uso de uma AI generativa, que fornece suporte direto aos pequenos agricultores por meio de seus dispositivos móveis. Ela será capaz de auxiliá-los em todas as fases da produção agrícola, desde a preparação do campo até o pós-campo. 
 
@@ -15,7 +15,7 @@ Um exemplo prático envolveria o agricultor capturar uma imagem do solo através
 
 # INSTRUÇÕES DE USO
 
-CADASTRAMENTO
+## CADASTRAMENTO
 
 O programa solicitará informações para cadastrar o cliente:
 - Digite o nome do cliente quando solicitado.
