@@ -1,1 +1,1 @@
-# global-solution-2023-computional-thinking-using-python
+# GLOBAL SOLUTION 2023 - JOANAs

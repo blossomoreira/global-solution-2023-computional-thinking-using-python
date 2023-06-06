@@ -1,4 +1,5 @@
 def cadastrar_cliente():
+
     # Solicita informações ao usuário para cadastrar o mesmo
     print("\nOlá, meu nome é JOANAs, sou sua assistente. Antes de tudo, vamos te conhecer um pouquinho melhor!")
     print("\nVamos realizar o seu cadastro.")
@@ -16,7 +17,6 @@ def cadastrar_cliente():
 
     return cliente
 
-
 def cadastrar_plantio():
     # Solicita informações ao usuário para cadastrar um plantio
     print("\nMe fale um pouco sobre o que você quer plantar: ")
@@ -31,7 +31,6 @@ def cadastrar_plantio():
     }
 
     return plantio
-
 
 def identificar_pragas(tipo_planta):
     # Dicionário com as pragas possíveis para cada tipo de planta
@@ -67,7 +66,6 @@ def selecionar_opcao(mensagem, opcoes):
                 print("Opção inválida. Digite o número correspondente à opção.")
         except ValueError:
             print("Opção inválida. Digite o número correspondente à opção.")
-
 
 def main():
     # Cadastra um cliente
