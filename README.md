@@ -11,7 +11,7 @@ JOANAS é um sistema integrado com o uso de uma AI generativa, que fornece supor
 
 Durante a preparação do campo, que envolve atividades como semeadura, irrigação e fertilização, JOANAs forneceria orientações precisas sobre a quantidade adequada de recursos a serem utilizados, evitando o desperdício de água e dos própios produtos agrícolas. Além disso, através de fotografias do solo escolhido para o plantio, das espécies vegetais selecionadas pelo usuário e das informações básicas fornecidas pornecidas pelo mesmo, a AI Generativa fornecerá informações valiosas sobre a localização geográfica, o clima, a umidade ambiental e a qualidade do solo, permitindo a identificação e prevenção de problemas com pragas específicas de cada tipo de planta.
 
-Um exemplo prático envolveria o agricultor capturar uma imagem do solo através de sua câmera de celular ou drone e selecionar o tipo de semente que deseja plantar. Em resposta, o sistema forneceria previsões com imagens geradas de como as culturas (sementes) estariam em determinado tempo e dados estáticos intuitivos.
+Um exemplo prático envolveria o agricultor capturar uma imagem do solo através de sua câmera de celular ou drone e selecionar o tipo de semente que deseja plantar. Em resposta, o sistema forneceria previsões com imagens geradas de <br> como as culturas (sementes) estariam em determinado tempo e dados estáticos intuitivos.
 
 # INSTRUÇÕES DE USO
 
