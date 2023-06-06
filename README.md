@@ -1,9 +1,9 @@
 # GLOBAL SOLUTION 2023 - JOANAs
 
 ## EQUIPE:
-99478 - Diogo Mendes Moreira
-97694 - Giulia Pina de Figueiredo Galvão Ribeiro
-552458 - LAÍS MENDES SANTOS
+99478 - Diogo Mendes Moreira 
+97694 - Giulia Pina de Figueiredo Galvão Ribeiro 
+552458 - LAÍS MENDES SANTOS 
 
 ## COMO ELA FUNCIONA?
 
