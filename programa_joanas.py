@@ -1,4 +1,5 @@
 def cadastrar_cliente():
+
     print("\nOlá, meu nome é JOANAs, sou sua assistente. Antes de tudo, vamos te conhecer um pouquinho melhor!")
     print("\nVamos realizar o seu cadastro.")
     nome = input("Digite o seu nome: ")
@@ -13,7 +14,6 @@ def cadastrar_cliente():
     }
 
     return cliente
-
 
 def cadastrar_plantio():
     print("\nMe fale um pouco sobre o que você quer plantar: ")
@@ -31,17 +31,16 @@ def cadastrar_plantio():
 
 def identificar_pragas(tipo_planta):
     pragas = {
-        "Trigo": ["Lagarta-do-cartucho", "Ferrugem-do-trigo", "Pulgões"],
-        "Milho": ["Lagarta-do-cartucho", "Lagarta-elasmo", "Broca-do-colmo"],
-        "Arroz": ["Bicho-mineiro", "Lagarta-do-arroz", "Percevejo-do-colmo"],
-        "Feijão": ["Mosca-branca", "Lagarta-da-vagem", "Antracnose"]
+        "Trigo": ["Lagarta do cartucho", "Ferrugem do trigo", "Pulgões"],
+        "Milho": ["Lagarta do cartucho", "Lagarta elasmo", "Broca do colmo"],
+        "Arroz": ["Bicho mineiro", "Lagarta do arroz", "Percevejo do colmo"],
+        "Feijão": ["Mosca branca", "Lagarta da vagem", "Antracnose"]
     }
 
     if tipo_planta in pragas:
         return pragas[tipo_planta]
     else:
         return []
-
 
 def selecionar_opcao(mensagem, opcoes):
     print(mensagem)
@@ -60,12 +59,11 @@ def selecionar_opcao(mensagem, opcoes):
         except ValueError:
             print("Opção inválida. Digite o número correspondente à opção.")
 
-
 def main():
     cliente = cadastrar_cliente()
 
     while True:
-        opcao = selecionar_opcao("\nVamos cadastrar um plantio? Digite", ["Sim", "Não"])
+        opcao = selecionar_opcao("\nVamos cadastrar um plantio? Digite: ", ["Sim", "Não"])
 
         if opcao == "Sim":
             plantio = cadastrar_plantio()
@@ -77,7 +75,7 @@ def main():
     for plantio in cliente["plantios"]:
         tipo_solo = plantio["tipo_solo"]
 
-        print(f"\nPara o plantio de {plantio['tipo_planta']} no solo {tipo_solo}, é recomendado cultivar as seguintes sementes:")
+        print(f"\nPara o plantio de {plantio['tipo_planta']} no solo {tipo_solo}, é recomendado cultivar as sementes:")
 
         if tipo_solo == "Argiloso":
             sementes_recomendadas = ["Semente 1", "Semente 2"]
