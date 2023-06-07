@@ -1,7 +1,7 @@
 def cadastrar_cliente():
 
     # Solicita informações ao usuário para cadastrar o mesmo
-    print("Olá, meu nome é JOANAs, sou sua assistente. Antes de tudo, vamos te conhecer um pouquinho melhor!")
+    print("Olá, meu nome é JOANAs, sou sua assistente sustentavel. Antes de tudo, vamos te conhecer um pouquinho melhor!")
     print("Vamos realizar o seu cadastro.")
     nome = input("Digite o seu nome: ")
     email = input("Digite o seu email: ")
@@ -19,7 +19,7 @@ def cadastrar_cliente():
 
 def cadastrar_plantio():
     # Solicita informações ao usuário para cadastrar um plantio
-    print("\nMe fale um pouco sobre o que você quer plantar: ")
+    print("\n Para você conhecer um poquinhos mais minhas funcionalidades, fale um pouco sobre o que você quer plantar!")
     tipo_planta = selecionar_opcao("Selecione o tipo de planta do plantio:", ["Trigo", "Milho", "Arroz", "Feijão"])
     tipo_solo = selecionar_opcao("Selecione o tipo de solo do plantio:", ["Argiloso", "Arenoso", "Mistura de Argila e Areia"])
 
@@ -47,7 +47,6 @@ def identificar_pragas(tipo_planta):
     else:
         return []
 
-
 def selecionar_opcao(mensagem, opcoes):
     # Exibe a mensagem e as opções disponíveis para selecionar
     print(mensagem)
@@ -57,15 +56,12 @@ def selecionar_opcao(mensagem, opcoes):
     while True:
         # Pede para o usuário escolher uma opção
         escolha = input("Escolha uma opção: ")
-        try:
-            escolha = int(escolha)
-            if escolha in range(1, len(opcoes) + 1):
+        escolha = int(escolha)
+        if escolha in range(1, len(opcoes) + 1):
                 indice = escolha - 1
                 return opcoes[indice]
-            else:
+        else:
                 print("Opção inválida. Digite o número correspondente à opção.")
-        except ValueError:
-            print("Opção inválida. Digite o número correspondente à opção.")
 
 def main():
     # Cadastra um cliente
@@ -73,7 +69,7 @@ def main():
 
     while True:
         # Pergunta ao cliente se deseja cadastrar um plantio
-        opcao = selecionar_opcao("\nVamos cadastrar um plantio? Digite: ", ["Sim", "Não"])
+        opcao = selecionar_opcao("\nVamos cadastrar um plantio? Digite uma das opções: ", ["Sim", "Não"])
 
         if opcao == "Sim":
             # Cadastra um plantio
@@ -109,8 +105,6 @@ def main():
         for praga in plantio["possiveis_pragas"]:
             print(f"- {praga}")
 
-    print("\nCliente:")
-    print(f"Nome: {cliente['nome']}")
     print("Plantios:")
     for plantio in cliente["plantios"]:
         print(f" - Tipo de planta: {plantio['tipo_planta']}")
