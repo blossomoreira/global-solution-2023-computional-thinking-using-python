@@ -30,10 +30,10 @@ Se escolher "Sim", o programa solicitará informações sobre o plantio.<br>
 - Selecione o tipo de planta digitando o número correspondente à opção fornecida.<br>
 - Selecione o tipo de solo digitando o número correspondente à opção fornecida. Assim, fornecendo as pragas<br>
 
-O programa identificará as possíveis pragas com base no tipo de planta selecionado.<br>
+O programa identificará e as possíveis pragas com base no tipo de planta selecionado.<br>
 Em seguida, exibirá as sementes recomendadas com base no tipo de solo escolhido.<br>
 Caso não haja sementes recomendadas para o tipo de solo selecionado, será exibida uma mensagem informando a situação.<br>
 
 # Resultados finais:
 Após o cadastro do plantio, o programa exibirá os detalhes do cliente e os plantios cadastrados.<br>
-Será exibido o nome do cliente e a lista com detalhes de cada plantio, incluindo o tipo de planta, o tipo de solo e as possíveis pragas.
+Será exibido a lista com detalhes de cada plantio, incluindo o tipo de planta, o tipo de solo e as possíveis pragas.
